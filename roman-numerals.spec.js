@@ -12,3 +12,14 @@ test('parses 2 to II', () => {
   expect(result).toEqual('II')
 })
 
+test('parses 3 to III', () => {
+  const result = parse(3)
+
+  expect(result).toEqual('III')
+})
+
+test('parses 4 to IV', () => {
+  const result = parse(4)
+
+  expect(result).toEqual('IV')
+})
