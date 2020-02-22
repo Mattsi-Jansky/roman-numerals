@@ -4,21 +4,23 @@ module.exports = (i) => {
   const fives = i / 5
 
   if(i > Math.ceil(5 / 2)) {
-    for(let ii = 0; ii < 5 - i; ii++) {
-      result += 'I'
-    }
+    result += print('I', 5 - i)
 
-    for(let ii = 0; ii < fives; ii++) {
-      result += 'V'
-    }
+    result += print('V', fives)
   }
   else {
-    for(let ii = 0; ii < i; ii++) {
-      result += 'I'
-    }
+    result += print('I', i)
   }
 
-  
+  return result
+}
+
+function print(letter, times) {
+  let result = ''
+
+  for(let i = 0; i < times; i++) {
+    result += letter
+  }
 
   return result
 }
