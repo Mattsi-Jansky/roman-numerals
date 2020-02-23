@@ -1,3 +1,5 @@
+const print = (letter, times) => Array.from(new Array(times)).reduce(acc => acc + letter,'')
+
 module.exports = (i) => {
   let result = ''
 
@@ -16,16 +18,6 @@ module.exports = (i) => {
   else {
     result += print('V', Math.floor(fives))
     result += print('I', remainder)
-  }
-
-  return result
-}
-
-function print(letter, times) {
-  let result = ''
-
-  for(let i = 0; i < times; i++) {
-    result += letter
   }
 
   return result
