@@ -35,3 +35,10 @@ test('parses 6 to VI', () => {
 
   expect(result).toEqual('VI')
 })
+
+test('parses 7 to VII', () => {
+  const result = parse(7)
+
+  expect(result).toEqual('VII')
+})
+
