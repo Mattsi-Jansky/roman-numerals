@@ -1,4 +1,4 @@
-const parse = require('./roman-numerals')
+const { findBestFittingNumeral, parse } = require('./roman-numerals')
 
 test('Parses 1 to I', () => {
   const result = parse(1)
@@ -42,3 +42,38 @@ test('parses 7 to VII', () => {
   expect(result).toEqual('VII')
 })
 
+test.only('should find best fitting numeral X for 9', () => {
+  expect(findBestFittingNumeral(9)).toEqual(expect.objectContaining({decimal: 10, glyph: 'X'}))
+})
+
+test('should find best fitting numeral V for 8', () => {
+  expect(findBestFittingNumeral(8)).toEqual(expect.objectContaining({decimal: 5, glyph: 'V'}))
+})
+
+test('should find best fitting numeral V for 7', () => {
+  expect(findBestFittingNumeral(7)).toEqual(expect.objectContaining({decimal: 5, glyph: 'V'}))
+})
+
+test('should find best fitting numeral V for 6', () => {
+  expect(findBestFittingNumeral(6)).toEqual(expect.objectContaining({decimal: 5, glyph: 'V'}))
+})
+
+test('should find best fitting numeral V for 5', () => {
+  expect(findBestFittingNumeral(5)).toEqual(expect.objectContaining({decimal: 5, glyph: 'V'}))
+})
+
+test('should find best fitting numeral V for 4', () => {
+  expect(findBestFittingNumeral(4)).toEqual(expect.objectContaining({decimal: 5, glyph: 'V'}))
+})
+
+test('should find best fitting numeral I for 3', () => {
+  expect(findBestFittingNumeral(3)).toEqual(expect.objectContaining({decimal: 1, glyph: 'I'}))
+})
+
+test('should find best fitting numeral I for 2', () => {
+  expect(findBestFittingNumeral(2)).toEqual(expect.objectContaining({decimal: 1, glyph: 'I'}))
+})
+
+test('should find best fitting numeral I for 1', () => {
+  expect(findBestFittingNumeral(1)).toEqual(expect.objectContaining({decimal: 1, glyph: 'I'}))
+})
