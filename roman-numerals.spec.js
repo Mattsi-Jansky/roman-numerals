@@ -38,6 +38,12 @@ const testCases = [
   [800,'DCCC'],
   [900,'CM'],
   [1000,'M'],
+  [2000,'MM'],
+  [3000,'MMM'],
+  [4000,'MMMM'],
+  [5000,'MMMMM'],
+  [6000,'MMMMMM'],
+  [7000,'MMMMMMM'],
 ]
 
 testCases.forEach(testCase => {
