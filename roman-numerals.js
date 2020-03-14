@@ -42,7 +42,7 @@ function recurseParse(n, power, nextPower) {
   const quotient = n / bigNumeral.decimal
   const name = n / nextPower
 
-  if(name >= 0.9) {
+  if(n + smallNumeral.decimal == parentNumeral.decimal) {
     result += print(smallNumeral.glyph, 1)
     result += print(parentNumeral.glyph, 1)
   }
