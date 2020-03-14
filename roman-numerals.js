@@ -45,9 +45,9 @@ function parseDigit(n, power, nextPower) {
     result = print(smallNumeral.glyph, n / smallNumeral.decimal)
   }
   else if(n >= bigNumeral.decimal) {
-    const remainder = (n - bigNumeral.decimal)
-    result += print(bigNumeral.glyph, 1)
-    result += print(smallNumeral.glyph, remainder / smallNumeral.decimal)
+    result = 
+        print(bigNumeral.glyph, 1)
+      + print(smallNumeral.glyph, (n - bigNumeral.decimal) / smallNumeral.decimal)
   }
 
   return result
