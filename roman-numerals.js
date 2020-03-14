@@ -1,4 +1,3 @@
-const print = (letter, times) => Array.from(new Array(times)).reduce(acc => acc + letter,'')
 const numerals = {
   1: [
     {decimal: 1, glyph: 'I'},
@@ -54,6 +53,10 @@ function parseDigit(n, power, nextPower) {
   }
 
   return result
+}
+
+function print(letter, times) {
+  return Array.from(new Array(times)).reduce(acc => acc + letter,'')
 }
 
 module.exports = { parse }
