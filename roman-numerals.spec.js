@@ -29,6 +29,13 @@ const testCases = [
   [80,'LXXX'],
   [90,'XC'],
   [100,'C'],
+  [200,'CC'],
+  [300,'CCC'],
+  [400,'CD'],
+  [500,'D'],
+  [600,'DC'],
+  [700,'DCC'],
+  [800,'DCCC'],
 ]
 
 testCases.forEach(testCase => {
