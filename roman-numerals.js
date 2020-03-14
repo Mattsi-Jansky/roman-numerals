@@ -35,11 +35,7 @@ function recurseParse(n, power, nextPower) {
   const smallNumeral = numerals[power][0]
   const bigNumeral = numerals[power][1]
   const parentNumeral = numerals[nextPower][0]
-  
   let result = ''
-
-  const remainder = n % bigNumeral.decimal
-  const quotient = n / bigNumeral.decimal
 
   if(n + smallNumeral.decimal == parentNumeral.decimal) {
     result += print(smallNumeral.glyph, 1)
@@ -49,12 +45,12 @@ function recurseParse(n, power, nextPower) {
     result += print(smallNumeral.glyph, 1)
     result += print(bigNumeral.glyph, 1)
   }
-  else if(Math.floor(quotient) == 0) {
-    result += print(smallNumeral.glyph, Math.floor(n / smallNumeral.decimal))
+  else if(n >= bigNumeral.decimal) {
+    result += print(bigNumeral.glyph, 1)
+    result += print(smallNumeral.glyph, n % bigNumeral.decimal / smallNumeral.decimal)
   }
   else {
-    result += print(bigNumeral.glyph, Math.floor(quotient))
-    result += print(smallNumeral.glyph, remainder / smallNumeral.decimal)
+    result += print(smallNumeral.glyph, Math.floor(n / smallNumeral.decimal))
   }
 
   return result
