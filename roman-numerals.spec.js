@@ -1,4 +1,4 @@
-const { findBestFittingNumeral, parse } = require('./roman-numerals')
+const { parse } = require('./roman-numerals')
 
 test('Parses 1 to I', () => {
   const result = parse(1)
@@ -40,4 +40,10 @@ test('parses 7 to VII', () => {
   const result = parse(7)
 
   expect(result).toEqual('VII')
+})
+
+test('parses 12 to XII', () => {
+  const result = parse(12)
+
+  expect(result).toEqual('XII')
 })
