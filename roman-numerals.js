@@ -18,19 +18,19 @@ const numerals = {
 }
 
 function parse(n) {
-  return recurse([...n.toString()])
+  return parseDigits([...n.toString()])
 }
 
-function recurse(digits, result = '', power = 1) {
+function parseDigits(digits, result = '', power = 1) {
   if(digits.length == 0) return result
   const nextPower = power * 10
   
   const digit = digits.pop()
-  result = recurseParse(parseInt(digit) * power, power, nextPower) + result
-  return recurse(digits, result, nextPower)
+  result = parseDigit(parseInt(digit) * power, power, nextPower) + result
+  return parseDigits(digits, result, nextPower)
 }
 
-function recurseParse(n, power, nextPower) {
+function parseDigit(n, power, nextPower) {
   if(power === 1000) return print(numerals[power][0].glyph, n / numerals[power][0].decimal)
   const smallNumeral = numerals[power][0]
   const bigNumeral = numerals[power][1]
