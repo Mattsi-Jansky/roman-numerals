@@ -36,13 +36,13 @@ function parseDigit(n, power, nextPower) {
   result = ''
 
   if(n + smallNumeral.decimal == parentNumeral.decimal) {
-    result += print(smallNumeral.glyph, 1) + print(parentNumeral.glyph, 1)
+    result = print(smallNumeral.glyph, 1) + print(parentNumeral.glyph, 1)
   }
   else if(bigNumeral && n + smallNumeral.decimal == bigNumeral.decimal) {
     result = print(smallNumeral.glyph, 1) + print(bigNumeral.glyph, 1)
   }
   else if(bigNumeral == undefined || n < bigNumeral.decimal) {
-    result += print(smallNumeral.glyph, n / smallNumeral.decimal)
+    result = print(smallNumeral.glyph, n / smallNumeral.decimal)
   }
   else if(n >= bigNumeral.decimal) {
     const remainder = (n - bigNumeral.decimal)
