@@ -55,7 +55,7 @@ function recurseParse(n, power, nextPower) {
   }
   else {
     result += print(bigNumeral.glyph, Math.floor(quotient))
-    result += print(smallNumeral.glyph, remainder)
+    result += print(smallNumeral.glyph, remainder / smallNumeral.decimal)
   }
 
   return result
