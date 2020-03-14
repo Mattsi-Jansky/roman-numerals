@@ -23,23 +23,30 @@ function parse(n) {
 
 function recurse(digits, result = '', power = 1) {
   if(digits.length == 0) return result
+  const nextPower = power * 10
   
   const digit = digits.pop()
-  result = recurseParse(parseInt(digit) * power, numerals[power]) + result
-  return recurse(digits, result, power * 10)
+  result = recurseParse(parseInt(digit) * power, power, nextPower) + result
+  return recurse(digits, result, nextPower)
 }
 
-function recurseParse(n, numerals) {
-  console.log(`recurseParse ${n}, ${JSON.stringify(numerals)}`)
+function recurseParse(n, power, nextPower) {
   if(numerals.length == 1) return print(numerals[0].glyph, n / numerals[0].decimal)
-  const smallNumeral = numerals[0]
-  const bigNumeral = numerals[1]
+  const smallNumeral = numerals[power][0]
+  const bigNumeral = numerals[power][1]
+  const parentNumeral = numerals[nextPower][0]
+  
   let result = ''
 
   const remainder = n % bigNumeral.decimal
   const quotient = n / bigNumeral.decimal
+  const name = n / nextPower
 
-  if(Math.floor(quotient) == 0) {
+  if(name >= 0.9) {
+    result += print(smallNumeral.glyph, 1)
+    result += print(parentNumeral.glyph, 1)
+  }
+  else if(Math.floor(quotient) == 0) {
     if(remainder <= Math.ceil(bigNumeral.decimal / 2)) {
       result += print(smallNumeral.glyph, Math.floor(n / smallNumeral.decimal))
     }
