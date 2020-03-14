@@ -30,13 +30,15 @@ function parseDigits(digits, result = '', power = 1) {
 }
 
 function parseDigit(n, power, nextPower) {
-  if(power === 1000) return print(numerals[power][0].glyph, n / numerals[power][0].decimal)
   const smallNumeral = numerals[power][0]
   const bigNumeral = numerals[power][1]
-  const parentNumeral = numerals[nextPower][0]
-  let result = ''
+  const parentNumeral = numerals[nextPower] ? numerals[nextPower][0] : {}
+  result = ''
 
-  if(n + smallNumeral.decimal == parentNumeral.decimal) {
+  if(power === 1000) {
+    result += print(numerals[power][0].glyph, n / numerals[power][0].decimal)
+  }
+  else if(n + smallNumeral.decimal == parentNumeral.decimal) {
     result += print(smallNumeral.glyph, 1)
     result += print(parentNumeral.glyph, 1)
   }
