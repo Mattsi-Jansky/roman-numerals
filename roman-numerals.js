@@ -46,14 +46,12 @@ function recurseParse(n, power, nextPower) {
     result += print(smallNumeral.glyph, 1)
     result += print(parentNumeral.glyph, 1)
   }
+  else if(n + smallNumeral.decimal == bigNumeral.decimal) {
+    result += print(smallNumeral.glyph, 1)
+    result += print(bigNumeral.glyph, 1)
+  }
   else if(Math.floor(quotient) == 0) {
-    if(remainder <= Math.ceil(bigNumeral.decimal / 2)) {
-      result += print(smallNumeral.glyph, Math.floor(n / smallNumeral.decimal))
-    }
-    else {
-      result += print(smallNumeral.glyph, bigNumeral.decimal - remainder)
-      result += print(bigNumeral.glyph, 1)
-    }
+    result += print(smallNumeral.glyph, Math.floor(n / smallNumeral.decimal))
   }
   else {
     result += print(bigNumeral.glyph, Math.floor(quotient))
