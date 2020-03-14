@@ -42,6 +42,30 @@ test('parses 7 to VII', () => {
   expect(result).toEqual('VII')
 })
 
+test('parses 8 to VIII', () => {
+  const result = parse(7)
+
+  expect(result).toEqual('VII')
+})
+
+test('parses 9 to IX', () => {
+  const result = parse(7)
+
+  expect(result).toEqual('VII')
+})
+
+test('parses 10 to X', () => {
+  const result = parse(7)
+
+  expect(result).toEqual('VII')
+})
+
+test('parses 11 to XI', () => {
+  const result = parse(7)
+
+  expect(result).toEqual('VII')
+})
+
 test('parses 12 to XII', () => {
   const result = parse(12)
 
