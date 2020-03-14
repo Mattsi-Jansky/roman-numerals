@@ -40,7 +40,6 @@ function recurseParse(n, power, nextPower) {
 
   const remainder = n % bigNumeral.decimal
   const quotient = n / bigNumeral.decimal
-  const name = n / nextPower
 
   if(n + smallNumeral.decimal == parentNumeral.decimal) {
     result += print(smallNumeral.glyph, 1)
