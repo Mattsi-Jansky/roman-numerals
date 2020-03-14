@@ -36,6 +36,8 @@ const testCases = [
   [600,'DC'],
   [700,'DCC'],
   [800,'DCCC'],
+  [900,'CM'],
+  [1000,'M'],
 ]
 
 testCases.forEach(testCase => {

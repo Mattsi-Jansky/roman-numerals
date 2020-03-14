@@ -31,7 +31,7 @@ function recurse(digits, result = '', power = 1) {
 }
 
 function recurseParse(n, power, nextPower) {
-  if(numerals.length == 1) return print(numerals[0].glyph, n / numerals[0].decimal)
+  if(power === 1000) return print(numerals[power][0].glyph, n / numerals[power][0].decimal)
   const smallNumeral = numerals[power][0]
   const bigNumeral = numerals[power][1]
   const parentNumeral = numerals[nextPower][0]
