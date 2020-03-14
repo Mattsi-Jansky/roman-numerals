@@ -2,8 +2,11 @@
   "name": "roman-numerals",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "jest": "25.1.0"
   }
 }
